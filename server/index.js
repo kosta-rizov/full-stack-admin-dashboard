@@ -5,11 +5,14 @@ import cors from "cors"
 import dotenv from "dotenv";
 import helmet from "helmet";
 import morgan from "morgan";
-
 import clientRoutes from "./routes/client.js";
 import generalRoutes from "./routes/general.js";
 import managmentRoutes from "./routes/managment.js";
 import salesRoutes from "./routes/sales.js";
+
+// data imports
+import User from "./models/Users.js";
+import { dataUser } from "./data/index.js"
 
 // Configuration
 dotenv.config();
@@ -35,6 +38,8 @@ mongoose.connect(process.env.MONGO_URL , {
     useUnifiedTopology: true,
   }).then(() => {
     app.listen(PORT, () => console.log(`Server Port ${PORT}`))
+    // insert data to database
+    // User.insertMany(dataUser)
   }).catch((err) => {
     console.log(`${err} did not connect`)
 })

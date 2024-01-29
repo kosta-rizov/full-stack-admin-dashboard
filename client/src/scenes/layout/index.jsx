@@ -12,8 +12,8 @@ const Layout = () => {
   
   const userId = useSelector((state) => state.global.userId);
   const { data } = useGetUserQuery(userId);
-    
-  console.log("🚀 ~ Layout ~ data:", data)
+
+  // console.log("🚀 ~ Layout ~ data:", data)
 
   return (
     <Box

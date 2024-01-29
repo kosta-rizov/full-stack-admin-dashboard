@@ -12,7 +12,10 @@ import salesRoutes from "./routes/sales.js";
 
 // data imports
 import User from "./models/Users.js";
-import { dataUser } from "./data/index.js"
+import Product from "./models/Product.js";
+import ProductStat from "./models/ProductStat.js";
+
+import { dataUser, dataProduct, dataProductStat } from "./data/index.js"
 
 // Configuration
 dotenv.config();
@@ -38,8 +41,12 @@ mongoose.connect(process.env.MONGO_URL , {
     useUnifiedTopology: true,
   }).then(() => {
     app.listen(PORT, () => console.log(`Server Port ${PORT}`))
+
     // insert data to database
     // User.insertMany(dataUser)
+    // Product.insertMany(dataProduct)
+    // ProductStat.insertMany(dataProductStat)
+    
   }).catch((err) => {
     console.log(`${err} did not connect`)
 })

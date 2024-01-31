@@ -16,7 +16,6 @@ const Daily = () => {
     if (!data) return [];
 
     const { dailyData } = data;
-    console.log("🚀 ~ const[formattedData]=useMemo ~ dailyData:", dailyData)
 
     const totalSalesLine = {
       id: "totalSales",
